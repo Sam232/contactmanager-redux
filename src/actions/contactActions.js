@@ -3,7 +3,7 @@ import { GET_CONTACTS, GET_SINGLE_CONTACT, ADD_CONTACT, EDIT_CONTACT, DELETE_CON
 
 export const getContacts = () => async dispatch => {
   try{
-    const response = await axios.get("http://jsonplaceholder.typicode.com/users");
+    const response = await axios.get("https://jsonplaceholder.typicode.com/users");
     if(response.data){
       dispatch({
         type: GET_CONTACTS,
@@ -23,7 +23,7 @@ export const getContacts = () => async dispatch => {
 
 export const addContact = payload => async dispatch => {
   try{
-    const response = await axios.post("http://jsonplaceholder.typicode.com/users/", payload);
+    const response = await axios.post("https://jsonplaceholder.typicode.com/users/", payload);
     if(response.data){
       dispatch({
         type: ADD_CONTACT,
@@ -43,7 +43,7 @@ export const addContact = payload => async dispatch => {
 
 export const deleteContact = id => async dispatch => {
   try{
-    const response = await axios.delete(`http://jsonplaceholder.typicode.com/users/${id}`);
+    const response = await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`);
     if(response.data){
       dispatch({
         type: DELETE_CONTACT,
@@ -67,7 +67,7 @@ export const deleteContact = id => async dispatch => {
 
 export const getSingleContact = id => async dispatch => {
   try{
-    const response = await axios.get(`http://jsonplaceholder.typicode.com/users/${id}`);
+    const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
     if(response.data){
       dispatch({
         type: GET_SINGLE_CONTACT,
@@ -87,7 +87,7 @@ export const getSingleContact = id => async dispatch => {
 
 export const editContact = action => async dispatch => {
   try{
-    const response = await axios.put(`http://jsonplaceholder.typicode.com/users/${action.payload.id}`, action.payload);
+    const response = await axios.put(`https://jsonplaceholder.typicode.com/users/${action.payload.id}`, action.payload);
     if(response.data){
       dispatch({
         type: EDIT_CONTACT,
